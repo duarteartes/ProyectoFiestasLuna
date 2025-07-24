@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid var(--naranja);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1100;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav a {
+    border: 2px solid var(--naranja);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    color: black;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover, .nav a.active {
+    background-color: var(--verde);
+    color: white;
+    border: none;
+}
+
+.admin-icon {
+    border: none !important;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transition: color 0.3s ease;
+    padding: 0;
+    overflow: visible;
+}
+
+.admin-icon:hover, .admin-icon.active {
+    background-color: white !important;
+    color: var(--verde) !important;
+    cursor: pointer;
+}
+
+/* Cambiar el tamaño del mat-icon (Angular Material) */
+.admin-icon mat-icon {
+    font-size: 36px !important; /* más grande */
+    width: 36px;
+    height: 36px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+/*-------------------- RESPONSIVE ---------------------*/
+
+@media (max-width: 900px) {
+    .header {
+        border-bottom-width: 1.5px;
+    }
+    .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background-color: white;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+        display: none;
+        z-index: 1000;
+        border-top: 2px solid var(--naranja);
+    }
+    .nav.open {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}

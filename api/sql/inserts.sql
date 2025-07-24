@@ -84,7 +84,7 @@ INSERT INTO eventos (fiesta_id, fecha, hora_inicio, hora_fin, titulo, descripcio
     ),
     (2,
         '2024-08-31',
-        '00:30:00:00',
+        '00:30:00',
         '06:00:00',
         'Sesión de DJ Luis',
         'En la Casa de Cultura. Organizado por la SOCRYD',

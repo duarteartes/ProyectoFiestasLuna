@@ -1,0 +1,20 @@
+<header class="header">
+    <a routerLink="/" class="logo">
+        <img src="/assets/logos/isotipo_verde.svg" alt="Logo Turismo de Luna" height="40"/>
+    </a>
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <nav [class.open]="menuOpen" class="nav">
+        <a routerLink="fiestasSeptiembre" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Fiestas en Honor a la Virgen de Monlora</a>
+        <a routerLink="fiestasMayo" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Fiestas 1 de Mayo</a>
+        <a routerLink="historial" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Historial</a>
+        <a routerLink="colaboradores" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Colaboradores</a>
+        <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="admin-icon" title="Panel de Administración">
+            <mat-icon>person</mat-icon>
+        </a>
+    </nav>
+
+</header>

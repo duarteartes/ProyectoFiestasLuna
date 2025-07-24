@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
+const initDB = require('./initDB');
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -30,6 +32,10 @@ app.use('/api/pregoneros', pregonerosRoutes);
 app.use('/api/damas', damasRoutes);
 app.use('/api/colaboradores', colaboradoresRoutes);
 
-app.listen(port, () => {
-    console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
+initDB().then(() => {
+    app.listen(port, () => {
+        console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
+    });
+}).catch(err => {
+    console.error('❌ Error al iniciar la base de datos. El servidor no se ha iniciado.');
 });

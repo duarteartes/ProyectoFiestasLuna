@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+    padding-top: 100px;
+}
+
+:root {
+    --naranja: #DB9024;
+    --verde: #407470;
+    --fuente-titulo: 'Rakkas', cursive;
+    --fuente-base: 'Titillium Web', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
