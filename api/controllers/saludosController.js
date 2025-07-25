@@ -19,6 +19,17 @@ const getSaludosPorFiesta = async (req, res) => {
     }
 };
 
+const getSaludosPorAnioYTipo = async (req, res) => {
+    try {
+        const { anio, tipo } = req.params;
+        const saludos = await SaludosModel.getSaludosPorAnioYTipo(parseInt(anio), tipo);
+        res.json(saludos);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener los saludos por año y tipo', error });
+    }
+};
+
+
 const createSaludo = async (req, res) => {
     try {
         const { fiesta_id, autor, cargo, mensaje, categoria } = req.body;
@@ -35,5 +46,6 @@ const createSaludo = async (req, res) => {
 module.exports = {
     getAllSaludos,
     getSaludosPorFiesta,
+    getSaludosPorAnioYTipo,
     createSaludo
 };

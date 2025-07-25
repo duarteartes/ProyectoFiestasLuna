@@ -1,0 +1,25 @@
+<div class="saludos-container">
+    <ng-container *ngIf="cargando">
+        <p>Cargando saludos...</p>
+    </ng-container>
+
+    <ng-container *ngIf="!cargando && saludos.length === 0">
+        <p>No hay saludos disponibles para este año</p>
+    </ng-container>
+
+    <div *ngFor="let saludo of saludos" class="saludo" [class.desplegado]="desplegado[saludo.id]">
+        <div class="header" (click)="toggle(saludo.id)">
+            <span class="titulo">Saludo del {{saludo.cargo}}</span>
+            <span class="material-icons icono">
+                {{ desplegado[saludo.id] ? 'do_not_disturb_on' : 'add_circle' }}
+            </span>
+        </div>
+
+        <hr class="separador" *ngIf="desplegado[saludo.id]">
+
+        <div *ngIf="desplegado[saludo.id]" class="contenido">
+            <p class="mensaje">{{ saludo.mensaje }}</p>
+            <p class="autor">- {{ saludo.autor }}</p>
+        </div>
+    </div>
+</div>
