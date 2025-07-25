@@ -19,6 +19,17 @@ const getEventosPorFiesta = async (req, res) => {
     }
 };
 
+const getEventosMonloraPorAnio = async (req, res) => {
+    try {
+        const { anio } = req.params;
+        const eventos = await EventosModel.getEventosGeneralesMonloraPorAnio(anio);
+        res.json(eventos);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener los eventos de septiembre', error });
+    }
+};
+
+
 const createEvento = async (req, res) => {
     try {
         const { fiesta_id, fecha, hora_inicio, titulo } = req.body;
@@ -35,5 +46,6 @@ const createEvento = async (req, res) => {
 module.exports = {
     getAllEventos,
     getEventosPorFiesta,
+    getEventosMonloraPorAnio,
     createEvento
 };

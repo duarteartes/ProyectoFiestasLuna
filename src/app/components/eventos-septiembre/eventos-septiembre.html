@@ -1,0 +1,35 @@
+<h1 class="title-general">Programa de Fiestas en Honor a la Virgen de Monlora</h1>
+<div class="eventos-container">
+    <ng-container *ngIf="cargando">
+        <p>Cargando eventos...</p>
+    </ng-container>
+
+    <ng-container *ngIf="!cargando && error">
+        <p>Ha ocurrido un error al cargar los eventos.</p>
+    </ng-container>
+
+    <ng-container *ngIf="!cargando && !error && Object.keys(eventosAgrupados).length === 0">
+        <p>No hay eventos generales disponibles para este año.</p>
+    </ng-container>
+
+    <div *ngFor="let fecha of Object.keys(eventosAgrupados)" class="dia-evento" [class.desplegado]="desplegados[fecha]">
+        <div class="cabecera" (click)="toggle(fecha)">
+            <span class="fecha">{{ formatearFecha(fecha) }}</span>
+            <span class="material-icons icono">
+                {{ desplegados[fecha] ? 'do_not_disturb_on' : 'add_circle' }}
+            </span>
+        </div>
+
+        <div *ngIf="desplegados[fecha]" class="contenido-dia">
+            <div *ngFor="let evento of eventosAgrupados[fecha]" class="evento">
+                <div class="hora">
+                {{ evento.hora_inicio }}<span *ngIf="evento.hora_fin"> - {{ evento.hora_fin }}</span>
+                </div>
+                <div class="detalle">
+                    <h4 class="titulo">{{ evento.titulo }}</h4>
+                    <p class="descripcion" *ngIf="evento.descripcion">{{ evento.descripcion }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

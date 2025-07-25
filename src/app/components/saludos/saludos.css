@@ -1,6 +1,9 @@
 .saludos-container {
     padding: 1rem;
     font-family: var(--fuente-base);
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1500px;
 }
 
 .saludo {
@@ -29,6 +32,7 @@
     font-family: var(--fuente-titulo);
     color: var(--naranja);
     font-size: 1.3rem;
+    text-transform: uppercase;
 }
 
 .saludo.desplegado .titulo {

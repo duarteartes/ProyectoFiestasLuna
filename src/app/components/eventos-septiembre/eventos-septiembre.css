@@ -1,0 +1,83 @@
+.eventos-container {
+  margin: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.dia-evento {
+  border: 2px solid green;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.dia-evento .cabecera {
+  background-color: white;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: orange;
+  font-family: 'Rakkas', cursive;
+  font-size: 1.2rem;
+}
+
+.dia-evento.desplegado .cabecera {
+  background-color: orange;
+  color: black;
+}
+
+.dia-evento .icono {
+  font-size: 2rem;
+}
+
+.dia-evento.desplegado .icono {
+  color: black;
+}
+
+.dia-evento:not(.desplegado) .icono {
+  color: orange;
+}
+
+.contenido-dia {
+  padding: 1rem;
+  background-color: #fefefe;
+  border-top: 2px solid green;
+}
+
+.evento {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.evento .hora {
+  width: 30%;
+  font-weight: bold;
+}
+
+.evento .detalle {
+  width: 65%;
+}
+
+.evento .titulo {
+  margin: 0;
+  font-weight: bold;
+}
+
+.evento .descripcion {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .evento {
+    flex-direction: column;
+  }
+
+  .evento .hora,
+  .evento .detalle {
+    width: 100%;
+  }
+}
