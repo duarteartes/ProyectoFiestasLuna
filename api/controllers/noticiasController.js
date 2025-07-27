@@ -19,6 +19,15 @@ const getNoticiasPorFiesta = async (req, res) => {
     }
 };
 
+const getNoticiasMonloraActual = async (req, res) => {
+    try {
+        const noticias = await NoticiasModel.getNoticiasMonloraActual();
+        res.json(noticias);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las noticias de Monlora del año actual', error });
+    }
+};
+
 const createNoticia = async (req, res) => {
     try {
         const { fiesta_id, fecha, mensaje } = req.body;
@@ -35,5 +44,6 @@ const createNoticia = async (req, res) => {
 module.exports = {
     getAllNoticias,
     getNoticiasPorFiesta,
+    getNoticiasMonloraActual,
     createNoticia
 };

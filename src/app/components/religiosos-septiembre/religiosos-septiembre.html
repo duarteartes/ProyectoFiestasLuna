@@ -1,0 +1,27 @@
+<div class="religiosos-container" [class.desplegado]="desplegado">
+    <div class="cabecera" (click)="toggle()">
+        <span class="titulo">Actos Religiosos</span>
+        <span class="material-icons icono">
+            {{ desplegado ? 'do_not_disturb_on' : 'add_circle' }}
+        </span>
+    </div>
+
+    <div *ngIf="desplegado">
+        <hr class="separador" />
+        <div *ngIf="cargando">Cargando eventos religiosos...</div>
+        <div *ngIf="error">Error al cargar los eventos religiosos</div>
+        <div *ngIf="!cargando && eventosPorDia.length === 0">No hay eventos religiosos disponibles</div>
+
+        <div *ngFor="let dia of eventosPorDia" class="dia-eventos">
+            <div class="fecha-dia"><strong>{{ formatearFecha(dia.fecha) }}</strong></div>
+
+            <div *ngFor="let evento of dia.eventos" class="evento">
+                <div class="linea">
+                    <span class="hora">{{ formatearHora(evento.hora_inicio) }}</span>
+                    <span class="titulo">{{ evento.titulo }}</span>
+                </div>
+                <div class="descripcion" *ngIf="evento.descripcion">{{ evento.descripcion }}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -31,6 +31,17 @@ const getEventosGeneralesMonloraPorAnio = async (anio) => {
     return rows;
 };
 
+const getEventosReligiososMonloraPorAnio = async (anio) => {
+    const [rows] = await db.query(`
+        SELECT e.*, a.anio
+        FROM eventos e
+        JOIN fiestas f ON e.fiesta_id = f.id
+        JOIN anios a ON f.anio_id = a.id
+        WHERE f.tipo = 'monlora' AND a.anio = ? AND e.categoria = 'religioso'
+        ORDER BY e.fecha, e.hora_inicio
+    `, [anio]);
+    return rows;
+};
 
 const createEvento = async (evento) => {
     const { fiesta_id, fecha, hora_inicio, hora_fin, titulo, descripcion, categoria } = evento;
@@ -47,5 +58,6 @@ module.exports = {
     getEventos,
     getEventosPorFiestaId,
     getEventosGeneralesMonloraPorAnio,
+    getEventosReligiososMonloraPorAnio,
     createEvento
 };

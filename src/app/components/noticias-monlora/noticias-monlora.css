@@ -1,0 +1,113 @@
+.titulo-noticias {
+    font-family: var(--fuente-titulo);
+    font-size: 3rem;
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.contenedor-noticia {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid var(--verde);
+    border-radius: 40px;
+    padding: 20px 40px;
+    font-family: var(--fuente-base);
+    color: black;
+}
+
+.contenido-noticia {
+    max-width: 500px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.icono {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: var(--naranja);
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+}
+
+.icono:first-child {
+    left: 20px;
+}
+
+.icono:last-child {
+    right: 20px;
+}
+
+.mensaje {
+    font-size: 1.5rem;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+/*-------------------- RESPONSIVE --------------------*/
+
+@media (max-width: 780px) {
+    .titulo-noticias {
+        font-size: 2.5rem;
+        margin: 30px 0 15px;
+    }
+    .contenedor-noticia {
+        width: 80%;
+        padding: 15px 30px;
+        border-width: 4px;
+    }
+    .contenido-noticia {
+        max-width: 400px;
+        padding: 0 15px;
+    }
+    .icono {
+        font-size: 35px;
+    }
+    .icono:first-child {
+        left: 15px;
+    }
+    .icono:last-child {
+        right: 15px;
+    }
+    .mensaje {
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-noticias {
+        font-size: 2rem;
+        margin: 25px 0 10px;
+    }
+    .contenedor-noticia {
+        width: 75%;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-width: 3px;
+    }
+    .icono {
+        position: static;
+        transform: none;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    .contenedor-noticia {
+        justify-content: center;
+    }
+    .contenido-noticia {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .mensaje {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+}

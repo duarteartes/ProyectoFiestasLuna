@@ -19,6 +19,19 @@ const getNoticiasPorFiestaId = async (fiesta_id) => {
     return rows;
 };
 
+const getNoticiasMonloraActual = async () => {
+    const [rows] = await db.query(`
+        SELECT n.*, f.tipo AS fiesta_tipo, a.anio
+        FROM noticias n
+        JOIN fiestas f ON n.fiesta_id = f.id
+        JOIN anios a ON f.anio_id = a.id
+        WHERE f.tipo = 'monlora' AND a.anio = YEAR(CURDATE())
+        ORDER BY n.fecha DESC
+    `);
+    return rows;
+};
+
+
 const createNoticia = async (noticia) => {
     const { fiesta_id, fecha, mensaje } = noticia;
     const [result] = await db.query(
@@ -31,5 +44,6 @@ const createNoticia = async (noticia) => {
 module.exports = {
     getNoticias,
     getNoticiasPorFiestaId,
+    getNoticiasMonloraActual,
     createNoticia
 };

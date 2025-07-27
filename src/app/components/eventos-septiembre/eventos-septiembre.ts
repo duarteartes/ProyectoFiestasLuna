@@ -31,10 +31,18 @@ export class EventosSeptiembre implements OnInit {
           }
           this.eventosAgrupados[fecha].push(e);
         });
-        this.cargando = false;
-      },
-      error: () => {
-        this.error = true;
+        for (const fecha in this.eventosAgrupados){
+          const eventosDelDia = this.eventosAgrupados[fecha];
+          const eventosTemprano = eventosDelDia.filter(ev =>{
+            const [hora, minutos, segundos] = ev.hora_inicio.split(':').map(Number);
+            return hora >= 0 && hora < 7;
+          });
+          const eventosNormales = eventosDelDia.filter(ev => {
+            const [hora, minutos, segundos] = ev.hora_inicio.split(':').map(Number);
+            return hora >= 7 || hora === undefined;
+          });
+          this.eventosAgrupados[fecha] = [...eventosNormales, ...eventosTemprano];
+        }
         this.cargando = false;
       }
     });

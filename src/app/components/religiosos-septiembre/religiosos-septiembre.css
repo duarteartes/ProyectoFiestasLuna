@@ -1,0 +1,149 @@
+.religiosos-container {
+    padding: 1rem;
+    font-family: var(--fuente-base);
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1500px;
+    border: 5px solid var(--verde);
+    border-radius: 35px;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.religiosos-container.desplegado {
+    padding: 1rem 1.75rem;
+    background-color: var(--naranja);
+    border: none;
+    color: black;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cabecera .titulo {
+    font-family: var(--fuente-titulo);
+    color: var(--naranja);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.religiosos-container.desplegado .cabecera .titulo {
+    color: black;
+}
+
+.cabecera .icono {
+    font-size: 40px;
+    color: var(--naranja);
+    transition: color 0.3s;
+}
+
+.religiosos-container.desplegado .cabecera .icono {
+    color: black;
+}
+
+.separador {
+    border: none;
+    border-bottom: 2px solid var(--verde);
+    margin: 0.75rem 0;
+}
+
+.dia-eventos {
+    margin-top: 1.5rem;
+}
+
+.fecha-dia {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--verde);
+}
+
+.linea {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.evento {
+    font-family: var(--fuente-base);
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--naranja);
+}
+
+.hora {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: black;
+}
+
+.titulo {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.descripcion {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0.25rem;
+    color: #333;
+}
+
+/*-------------------- RESPONSIVE --------------------*/
+
+@media (max-width: 780px) {
+    .religiosos-container {
+        border: 4px solid var(--verde);
+        width: 80%;
+        padding: 0.75rem 1rem;
+    }
+    .cabecera .icono {
+        font-size: 30px;
+        margin: 0.3rem;
+    }
+    .cabecera .titulo {
+        font-size: 1.2rem;
+    }
+    .fecha-dia {
+        font-size: 1.2rem;
+    }
+    .hora {
+        font-size: 1rem;
+    }
+    .titulo {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .religiosos-container {
+        border: 3px solid var(--verde);
+        width: 75%;
+        padding: 0.5rem 0.75rem;
+    }
+    .cabecera .icono {
+        font-size: 26px;
+    }
+    .cabecera .titulo {
+        font-size: 1.1rem;
+    }
+    .fecha-dia {
+        font-size: 1.1rem;
+    }
+    .hora {
+        font-size: 0.95rem;
+    }
+    .titulo {
+        font-size: 0.95rem;
+    }
+    .descripcion {
+        font-size: 0.9rem;
+    }
+}

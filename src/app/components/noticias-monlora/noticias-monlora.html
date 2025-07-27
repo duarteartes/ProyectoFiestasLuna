@@ -1,0 +1,11 @@
+<h2 class="titulo-noticias">Noticias</h2>
+
+<div class="contenedor-noticia">
+    <span class="material-icons icono" (click)="anterior()">arrow_circle_left</span>
+
+    <div class="contenido-noticia" *ngIf="noticias.length > 0">
+        <p class="mensaje">{{ noticias[indiceActual].mensaje }}</p>
+    </div>
+
+    <span class="material-icons icono" (click)="siguiente()">arrow_circle_right</span>
+</div>
