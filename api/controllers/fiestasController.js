@@ -19,6 +19,19 @@ const getFiestasPorAnio = async (req, res) => {
     }
 };
 
+const getTextoComisionMonloraActual = async (req, res) => {
+    try {
+        const texto = await FiestasModel.getTextoComisionMonloraActual();
+        if (texto) {
+            res.json(texto);
+        } else {
+            res.status(404).json({ message: 'No se encontró el texto de la comisión para Monlora del año actual' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener el texto de la comisión', error });
+    }
+};
+
 const createFiesta = async (req, res) => {
     try {
         const { anio_id, tipo, texto_comision } = req.body;
@@ -35,5 +48,6 @@ const createFiesta = async (req, res) => {
 module.exports = {
     getAllFiestas,
     getFiestasPorAnio,
+    getTextoComisionMonloraActual,
     createFiesta
 };

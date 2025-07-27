@@ -1,0 +1,46 @@
+.comision-container {
+    max-width: 1500px;
+    width: 80%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 40px;
+    font-family: var(--fuente-base);
+    background-color: var(--verde);
+    color: black;
+}
+
+.titulo-comision {
+    text-align: center;
+    font-family: var(--fuente-titulo);
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.texto-comision {
+    font-size: 1.5rem;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: white;
+    padding: 1.7rem;
+    text-align: center;
+}
+
+/*---------------------- RESPONSIVE --------------------*/
+@media (max-width: 780px) {
+    .titulo-comision {
+        font-size: 1.6rem;
+    }
+    .texto-comision {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-comision {
+        font-size: 1.4rem;
+    }
+    .texto-comision {
+        font-size: 1rem;
+    }
+}

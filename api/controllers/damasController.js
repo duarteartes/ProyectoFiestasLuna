@@ -19,6 +19,15 @@ const getDamasPorFiesta = async (req, res) => {
   }
 };
 
+const getDamasMonloraActual = async (req, res) => {
+    try {
+        const damas = await DamasModel.getDamasMonloraActual();
+        res.json(damas);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener las damas', error });
+    }
+};
+
 const createDama = async (req, res) => {
     try {
         const { fiesta_id, nombre, imagen_url } = req.body;
@@ -35,5 +44,6 @@ const createDama = async (req, res) => {
 module.exports = {
     getAllDamas,
     getDamasPorFiesta,
+    getDamasMonloraActual,
     createDama
 };

@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const initDB = require('./initDB');
@@ -31,6 +32,8 @@ app.use('/api/saludos', saludosRoutes);
 app.use('/api/pregoneros', pregonerosRoutes);
 app.use('/api/damas', damasRoutes);
 app.use('/api/colaboradores', colaboradoresRoutes);
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 initDB().then(() => {
     app.listen(port, () => {
