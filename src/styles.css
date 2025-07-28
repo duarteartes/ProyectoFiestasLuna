@@ -20,3 +20,76 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.title-seccion-negro {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    font-family: var(--fuente-titulo);
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.title-seccion-blanco {
+    margin-bottom: 30px;
+    font-family: var(--fuente-titulo);
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.title-desplegable {
+    font-family: var(--fuente-titulo);
+    color: var(--naranja);
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.fecha-evento {
+    font-family: var(--fuente-titulo);
+    color: var(--verde);
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.dia-evento.desplegado .fecha-evento {
+    color: white;
+}
+
+/*---------------------- RESPONSIVE --------------------*/
+@media (max-width: 780px) {
+    .title-seccion-negro {
+        font-size: 2.5rem;
+    }
+    .title-seccion-blanco {
+        font-size: 2.5rem;
+    }
+    .title-desplegable {
+        font-size: 1.8rem;
+    }
+    .fecha-evento {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-seccion-negro {
+        font-size: 2rem;
+    }
+    .title-seccion-blanco {
+        font-size: 2rem;
+    }
+    .title-desplegable {
+        font-size: 1.6rem;
+    }
+    .fecha-evento {
+        font-size: 1.6rem;
+    }
+}

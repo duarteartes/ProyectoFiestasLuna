@@ -25,14 +25,7 @@
     cursor: pointer;
 }
 
-.cabecera .titulo {
-    font-family: var(--fuente-titulo);
-    color: var(--naranja);
-    font-size: 1.3rem;
-    text-transform: uppercase;
-}
-
-.religiosos-container.desplegado .cabecera .titulo {
+.religiosos-container.desplegado .title-desplegable {
     color: black;
 }
 
@@ -108,9 +101,6 @@
         font-size: 30px;
         margin: 0.3rem;
     }
-    .cabecera .titulo {
-        font-size: 1.2rem;
-    }
     .fecha-dia {
         font-size: 1.2rem;
     }
@@ -130,9 +120,6 @@
     }
     .cabecera .icono {
         font-size: 26px;
-    }
-    .cabecera .titulo {
-        font-size: 1.1rem;
     }
     .fecha-dia {
         font-size: 1.1rem;

@@ -1,4 +1,4 @@
-<h1 class="title-general">Programa de Fiestas en Honor a la Virgen de Monlora</h1>
+<h1 class="title-seccion-negro">Programa de Fiestas en Honor a la Virgen de Monlora</h1>
 <div class="eventos-container">
     <ng-container *ngIf="cargando">
         <p>Cargando eventos...</p>
@@ -14,7 +14,7 @@
 
     <div *ngFor="let fecha of Object.keys(eventosAgrupados)" class="dia-evento" [class.desplegado]="desplegados[fecha]">
         <div class="cabecera" (click)="toggle(fecha)">
-            <span class="fecha">{{ formatearFecha(fecha) }}</span>
+            <span class="fecha-evento">{{ formatearFecha(fecha) }}</span>
             <span class="material-icons icono">
                 {{ desplegados[fecha] ? 'do_not_disturb_on' : 'add_circle' }}
             </span>

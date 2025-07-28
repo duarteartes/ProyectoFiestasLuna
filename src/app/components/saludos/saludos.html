@@ -9,7 +9,7 @@
 
     <div *ngFor="let saludo of saludos" class="saludo" [class.desplegado]="desplegado[saludo.id]">
         <div class="header" (click)="toggle(saludo.id)">
-            <span class="titulo">Saludo del {{saludo.cargo}}</span>
+            <span class="title-desplegable">Saludo del {{saludo.cargo}}</span>
             <span class="material-icons icono">
                 {{ desplegado[saludo.id] ? 'do_not_disturb_on' : 'add_circle' }}
             </span>

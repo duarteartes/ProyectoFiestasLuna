@@ -1,11 +1,3 @@
-.titulo-damas {
-    font-size: 3rem;
-    font-family: var(--fuente-titulo);
-    color: black;
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
 .damas-container {
     text-align: center;
     padding: 3rem;

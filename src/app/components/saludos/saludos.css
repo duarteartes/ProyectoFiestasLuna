@@ -28,14 +28,7 @@
     cursor: pointer;
 }
 
-.saludo .titulo {
-    font-family: var(--fuente-titulo);
-    color: var(--naranja);
-    font-size: 1.3rem;
-    text-transform: uppercase;
-}
-
-.saludo.desplegado .titulo {
+.saludo.desplegado .title-desplegable {
     color: black;
 }
 
@@ -61,8 +54,13 @@
 }
 
 .saludo .mensaje {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
     font-size: 1.1rem;
     line-height: 1.5;
+    white-space: pre-line;
+    text-align: center;
 }
 
 .saludo .autor {
@@ -85,9 +83,6 @@
         font-size: 30px;
         margin: 0.3rem;
     }
-    .saludo .titulo {
-        font-size: 1.2rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -96,9 +91,6 @@
     }
     .saludo .icono {
         font-size: 26px;
-    }
-    .saludo .titulo {
-        font-size: 1.1rem;
     }
     .saludo .mensaje {
         font-size: 1rem;
