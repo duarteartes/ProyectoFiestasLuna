@@ -3,6 +3,7 @@ const router = express.Router();
 const ColaboradoresController = require('../controllers/colaboradoresController');
 
 router.get('/', ColaboradoresController.getAllColaboradores);
+router.get('/monlora/actual', ColaboradoresController.getColaboradoresMonloraAnioActual);
 router.get('/:fiesta_id', ColaboradoresController.getColaboradoresPorFiesta);
 router.post('/', ColaboradoresController.createColaborador);
 

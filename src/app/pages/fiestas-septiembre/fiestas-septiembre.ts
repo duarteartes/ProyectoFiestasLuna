@@ -5,6 +5,7 @@ import { ReligiososSeptiembre } from '../../components/religiosos-septiembre/rel
 import { NoticiasMonlora } from '../../components/noticias-monlora/noticias-monlora';
 import { Comision } from '../../components/comision/comision';
 import { Damas } from '../../components/damas/damas';
+import { Colaboradores } from '../../components/colaboradores/colaboradores';
 
 @Component({
   selector: 'app-fiestas-septiembre',
@@ -14,7 +15,8 @@ import { Damas } from '../../components/damas/damas';
     ReligiososSeptiembre,
     NoticiasMonlora,
     Comision,
-    Damas
+    Damas,
+    Colaboradores
   ],
   templateUrl: './fiestas-septiembre.html',
   styleUrl: './fiestas-septiembre.css'

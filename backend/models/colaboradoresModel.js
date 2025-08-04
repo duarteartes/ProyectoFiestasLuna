@@ -19,6 +19,18 @@ const getColaboradoresPorFiestaId = async (fiesta_id) => {
     return rows;
 };
 
+const getColaboradoresMonloraAnioActual = async () =>{
+    const [rows] = await db.query(`
+        SELECT c.*
+        FROM colaboradores c
+        JOIN fiestas f ON c.fiesta_id = f.id
+        JOIN anios a ON f.anio_id = a.id
+        WHERE f.tipo = 'monlora' AND a.anio = YEAR(CURDATE())
+        ORDER BY c.nombre
+    `);
+    return rows;
+};
+
 const createColaborador = async (colaborador) => {
     const { fiesta_id, nombre, logo_url, web_url } = colaborador;
     const [result] = await db.query(
@@ -31,5 +43,6 @@ const createColaborador = async (colaborador) => {
 module.exports = {
     getColaboradores,
     getColaboradoresPorFiestaId,
+    getColaboradoresMonloraAnioActual,
     createColaborador
 };

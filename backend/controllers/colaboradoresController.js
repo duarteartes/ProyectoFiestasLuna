@@ -19,6 +19,15 @@ const getColaboradoresPorFiesta = async (req, res) => {
     }
 };
 
+const getColaboradoresMonloraAnioActual = async (req, res) => {
+    try {
+        const colaboradores = await ColaboradoresModel.getColaboradoresMonloraAnioActual();
+        res.json(colaboradores);
+    } catch (error) {
+        res.status(500).json({ message: 'Error al obtener los colaboradores de Monlora del año actual', error });
+    }
+};
+
 const createColaborador = async (req, res) => {
     try {
         const { fiesta_id, nombre, logo_url, web_url } = req.body;
@@ -35,5 +44,6 @@ const createColaborador = async (req, res) => {
 module.exports = {
     getAllColaboradores,
     getColaboradoresPorFiesta,
+    getColaboradoresMonloraAnioActual,
     createColaborador
 };

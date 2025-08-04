@@ -1,0 +1,20 @@
+<h2 class="title-seccion-negro">Colaboradores</h2>
+<div class="slider-container">
+    <div class="slider-box">
+        <span class="material-icons flecha verde" (click)="prev()">arrow_circle_left</span>
+
+        <div class="slider-view">
+            <div #colaboradoresWrapper class="colaboradores-wrapper" [style.width.px]="colaboradoresExtendidos.length * 190" [style.transform]="getTransform()" [style.transition]="getTransition()">
+                <div class="colaborador" *ngFor="let c of colaboradoresExtendidos">
+                    <a *ngIf="c.web_url" [href]="c.web_url" target="_blank">
+                        <img [src]="c.logo_url" [alt]="c.nombre" />
+                    </a>
+                    <img *ngIf="!c.web_url" [src]="c.logo_url" [alt]="c.nombre" />
+                    <p class="colaborador-nombre">{{ c.nombre }}</p>
+                </div>
+            </div>
+        </div>
+
+        <span class="material-icons flecha verde" (click)="next()">arrow_circle_right</span>
+    </div>
+</div>
